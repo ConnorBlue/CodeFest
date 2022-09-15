@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+      
+      @keyframes flip{
+        50%{
+          transform: rotate(181deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+      html{
+        background-image: linear-gradient(red, yellow);
+        background-size:cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height:100vh;   
+      }
+      button{
+        background-color:peachpuff;
+      }
+
+    </style>
+</head>
+
+<body>
+
+    <div id = "NumOfTosses">
+        <input type = "text" id ="num">
+    </div>
+    <button id = "click" type="button">Flip</button>
+
+    <script>
+
+    document.getElementById('click').onclick = toss;
+     
+    
+    
+    function toss(){
+    
+        var numT = document.getElementById('num').value 
+        var tossArray = [0,0];
+        for(var i = 0;i<numT;i++){
+          var rng = Math.floor(Math.random() * 2);
+          tossArray[rng]=tossArray[rng]+1;
+        }
+      alert("Number of heads = " + tossArray[0] + " and number of tails = " + tossArray[1]);
+    }
+
+    </script>
+</body>
+</html>
